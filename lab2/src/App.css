@@ -19,13 +19,14 @@
 }
 
 #toDosTable tr:nth-child(even) {
-  background-color: #444444;
+  background-color: #f0f0f0;
 }
 
 #toDosTable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
+  background-color: #333;
   color: white;
 }
 
@@ -35,4 +36,23 @@
 
 #search {
   margin: 10px 0 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  #toDosTable {
+    color: white;
+  }
+
+  #toDosTable tr:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+
+  #toDosTable th {
+    background-color: #111;
+  }
+
+  #toDosTable td {
+    background-color: #333;
+    color: white;
+  }
 }
