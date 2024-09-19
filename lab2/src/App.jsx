@@ -3,6 +3,7 @@ import ToDoForm from "./components/ToDoForm";
 import SearchBar from "./components/SearchBar";
 import ToDoTable from "./components/ToDoTable";
 import "./App.css";
+import PageTitle from "./components/PageTitle";
 
 function App() {
   const [toDo, setToDo] = useState([]);
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <>
+      <PageTitle title={"To Do App"} />
       <ToDoForm
         title={title}
         onTitleChange={handleInputChange}
