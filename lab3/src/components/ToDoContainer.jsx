@@ -10,12 +10,14 @@ const ToDoContainer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newToDo = {
-      id: Date.now(),
-      title: title,
-    };
-    setToDo([...toDo, newToDo]);
-    setTitle("");
+    if (title != "") {
+      const newToDo = {
+        id: Date.now(),
+        title: title,
+      };
+      setToDo([...toDo, newToDo]);
+      setTitle("");
+    }
   };
 
   const handleDelete = (id) => {
