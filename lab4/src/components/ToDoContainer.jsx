@@ -2,10 +2,10 @@ import { useState } from 'react'
 import ToDoForm from './ToDoForm'
 import SearchBar from './SearchBar'
 import ToDoTable from './ToDoTable'
-import UseFetchToDos from '../hooks/UseFetchTodos'
+import useFetchToDos from '../hooks/useFetchTodos'
 
 const ToDoContainer = () => {
-  const { toDo, setToDo, loading, error } = UseFetchToDos()
+  const { toDo, setToDo, loading } = useFetchToDos()
   const [title, setTitle] = useState('')
   const [searchValue, setSearchValue] = useState('')
 

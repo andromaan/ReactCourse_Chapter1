@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import useLoader from './UseLoader'
+import useLoader from './useLoader'
 
-const UseFetchTodos = () => {
+const useFetchTodos = () => {
   const [toDo, setToDo] = useState([])
   const { loading, showLoader, hideLoader } = useLoader()
 
@@ -9,6 +9,7 @@ const UseFetchTodos = () => {
     const fetchTodos = async () => {
       showLoader()
       const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+      await Promise((resolve) => setTimeout(resolve, 2500))
       const json = await response.json()
       setToDo(json)
       hideLoader()
@@ -20,4 +21,4 @@ const UseFetchTodos = () => {
   return { toDo, setToDo, loading }
 }
 
-export default UseFetchTodos
+export default useFetchTodos

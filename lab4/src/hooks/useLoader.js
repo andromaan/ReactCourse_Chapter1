@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const UseLoader = () => {
+const useLoader = () => {
   const [loading, setLoading] = useState(false)
 
   const showLoader = () => setLoading(true)
@@ -9,4 +9,4 @@ const UseLoader = () => {
   return { loading, showLoader, hideLoader }
 }
 
-export default UseLoader
+export default useLoader
