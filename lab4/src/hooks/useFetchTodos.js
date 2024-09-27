@@ -8,8 +8,8 @@ const useFetchTodos = () => {
   useEffect(() => {
     const fetchTodos = async () => {
       showLoader()
+      await new Promise((resolve) => setTimeout(resolve, 500))
       const response = await fetch('https://jsonplaceholder.typicode.com/todos')
-      await Promise((resolve) => setTimeout(resolve, 2500))
       const json = await response.json()
       setToDo(json)
       hideLoader()
