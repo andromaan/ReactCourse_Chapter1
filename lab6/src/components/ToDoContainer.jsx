@@ -3,6 +3,7 @@ import ToDoForm from './ToDoForm'
 import SearchBar from './SearchBar'
 import ToDoTable from './ToDoTable'
 import useFetchToDos from '../hooks/useFetchTodos'
+import Loader from './Loader'
 
 const ToDoContainer = () => {
   const { toDo, setToDo, loading } = useFetchToDos()
@@ -47,7 +48,7 @@ const ToDoContainer = () => {
   if (loading) return <div>Loading...</div>
 
   return (
-    <div>
+    <Loader loading={loading}>
       <ToDoForm
         title={title}
         onTitleChange={handleInputChange}
@@ -62,7 +63,7 @@ const ToDoContainer = () => {
         onDelete={handleDelete}
         onUpdate={handleUpdate}
       />
-    </div>
+    </Loader>
   )
 }
 
