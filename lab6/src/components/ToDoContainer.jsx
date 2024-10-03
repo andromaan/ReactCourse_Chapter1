@@ -14,6 +14,7 @@ const ToDoContainer = () => {
     if (title !== '') {
       const newToDo = {
         id: Date.now(),
+        userId: Date.now(),
         title: title,
       }
       setToDo([...toDo, newToDo])
@@ -23,6 +24,12 @@ const ToDoContainer = () => {
 
   const handleDelete = (id) => {
     setToDo(toDo.filter((item) => item.id !== id))
+  }
+
+  const handleUpdate = (id, newTitle) => {
+    setToDo(
+      toDo.map((item) => (item.id === id ? { ...item, title: newTitle } : item))
+    )
   }
 
   const handleInputChange = (e) => {
@@ -37,9 +44,7 @@ const ToDoContainer = () => {
     item.title.toLowerCase().includes(searchValue.toLowerCase())
   )
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
+  if (loading) return <div>Loading...</div>
 
   return (
     <div>
@@ -52,7 +57,11 @@ const ToDoContainer = () => {
         searchValue={searchValue}
         onSearchChange={handleSearchValueChange}
       />
-      <ToDoTable toDos={filteredToDos} onDelete={handleDelete} />
+      <ToDoTable
+        toDos={filteredToDos}
+        onDelete={handleDelete}
+        onUpdate={handleUpdate}
+      />
     </div>
   )
 }
