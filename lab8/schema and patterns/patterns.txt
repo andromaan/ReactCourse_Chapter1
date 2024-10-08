@@ -1,0 +1,3 @@
+In the BooksTable component, I used a few key design patterns. The Presentational and Container Components Pattern keeps the UI logic in BooksTable separate from the state management in BooksContainer. 
+Conditional Rendering allows the table to switch between displaying book details and input fields for editing, creating a responsive interface. The input fields are Controlled Components, linking their values to the state for real-time updates. 
+Lastly, I added Validation to ensure required fields are filled before saving changes, which helps maintain data integrity. These patterns make the component modular and user-friendly for managing book entries.
