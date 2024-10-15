@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import ToDoForm from './ToDoForm'
-import SearchBar from './SearchBar'
+import SearchBar from '../search/components/SearchBar'
 import ToDoTable from './ToDoTable'
 import useFetchToDos from '../hooks/useFetchTodos'
-import Loader from './Loader'
+import Loader from '../loading/components/Loader'
 
 const ToDoContainer = () => {
   const { toDo, setToDo, loading } = useFetchToDos()
